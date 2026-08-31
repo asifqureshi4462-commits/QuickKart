@@ -16,18 +16,13 @@ import com.quickkart.app.utils.ImageMapper;
 
 import java.util.List;
 
-public class AdminCategoryAdapter extends RecyclerView.Adapter<AdminCategoryAdapter.VH> {
-
-    public interface Listener {
-        void onEdit(Category category);
-        void onDelete(Category category);
-    }
+public class CategoryGridAdapter extends RecyclerView.Adapter<CategoryGridAdapter.VH> {
 
     private final Context context;
     private final List<Category> categories;
-    private final Listener listener;
+    private final CategoryAdapter.OnCategoryClick listener;
 
-    public AdminCategoryAdapter(Context context, List<Category> categories, Listener listener) {
+    public CategoryGridAdapter(Context context, List<Category> categories, CategoryAdapter.OnCategoryClick listener) {
         this.context = context;
         this.categories = categories;
         this.listener = listener;
@@ -36,7 +31,7 @@ public class AdminCategoryAdapter extends RecyclerView.Adapter<AdminCategoryAdap
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_admin_category, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_category_grid, parent, false);
         return new VH(v);
     }
 
@@ -45,8 +40,7 @@ public class AdminCategoryAdapter extends RecyclerView.Adapter<AdminCategoryAdap
         Category cat = categories.get(position);
         holder.name.setText(cat.name);
         holder.image.setImageResource(ImageMapper.resolve(context, cat.imageKey));
-        holder.edit.setOnClickListener(v -> listener.onEdit(cat));
-        holder.delete.setOnClickListener(v -> listener.onDelete(cat));
+        holder.itemView.setOnClickListener(v -> listener.onClick(cat));
     }
 
     @Override
@@ -55,15 +49,13 @@ public class AdminCategoryAdapter extends RecyclerView.Adapter<AdminCategoryAdap
     }
 
     static class VH extends RecyclerView.ViewHolder {
-        ImageView image, edit, delete;
+        ImageView image;
         TextView name;
 
         VH(@NonNull View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.acImage);
-            name = itemView.findViewById(R.id.acName);
-            edit = itemView.findViewById(R.id.acEdit);
-            delete = itemView.findViewById(R.id.acDelete);
+            image = itemView.findViewById(R.id.gridCategoryImage);
+            name = itemView.findViewById(R.id.gridCategoryName);
         }
     }
 }
