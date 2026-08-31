@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/asBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Admin Settings"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Admin Credentials" />
+
+        <EditText
+            android:id="@+id/asCurrentPassword"
+            style="@style/InputField"
+            android:layout_marginTop="16dp"
+            android:hint="Current Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/asNewUsername"
+            style="@style/InputField"
+            android:layout_marginTop="14dp"
+            android:hint="New Username" />
+
+        <EditText
+            android:id="@+id/asNewPassword"
+            style="@style/InputField"
+            android:layout_marginTop="14dp"
+            android:hint="New Password (leave blank to keep unchanged)"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/asError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/danger"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnUpdateAdmin"
+            style="@style/ButtonPrimary"
+            android:layout_marginTop="20dp"
+            android:text="Update Credentials" />
+
+    </LinearLayout>
+</LinearLayout>

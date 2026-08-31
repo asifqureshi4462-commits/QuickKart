@@ -1,1 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/secondary"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Admin Dashboard"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/adminLogoutIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_logout"
+                app:tint="@color/white" />
+        </LinearLayout>
+
+        <!-- Stats grid (2x2) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/item_stat_card" android:id="@+id/statUsers"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="6dp" />
+                <include layout="@layout/item_stat_card" android:id="@+id/statProducts"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="6dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/item_stat_card" android:id="@+id/statOrders"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="6dp" />
+                <include layout="@layout/item_stat_card" android:id="@+id/statRevenue"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="6dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:text="Manage" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout android:id="@+id/menuCategories" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_category" />
+                <TextView style="@style/ProfileMenuText" android:text="Manage Categories" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/menuProducts" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_box" />
+                <TextView style="@style/ProfileMenuText" android:text="Manage Products" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/menuOrders" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_orders" />
+                <TextView style="@style/ProfileMenuText" android:text="Manage Orders" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/menuUsers" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_users" />
+                <TextView style="@style/ProfileMenuText" android:text="Manage Users" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/menuAdminSettings" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_settings" />
+                <TextView style="@style/ProfileMenuText" android:text="Admin Settings" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
