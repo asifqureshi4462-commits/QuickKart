@@ -45,6 +45,8 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AdminUserActivity.class)));
         findViewById(R.id.menuAdminSettings).setOnClickListener(v ->
                 startActivity(new Intent(this, AdminSettingActivity.class)));
+        findViewById(R.id.menuDeliveryPanel).setOnClickListener(v ->
+                startActivity(new Intent(this, com.quickkart.app.delivery.DeliveryLoginActivity.class)));
 
         setupStatCard(R.id.statUsers, R.drawable.ic_users, String.valueOf(db.countRows(DatabaseHelper.TABLE_USERS)), "Total Users");
         setupStatCard(R.id.statProducts, R.drawable.ic_box, String.valueOf(db.countRows(DatabaseHelper.TABLE_PRODUCTS)), "Total Products");

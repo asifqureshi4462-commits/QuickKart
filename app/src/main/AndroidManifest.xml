@@ -38,6 +38,9 @@
         <activity android:name=".admin.AdminOrderDetailActivity" android:exported="false" />
         <activity android:name=".admin.AdminUserActivity" android:exported="false" />
         <activity android:name=".admin.AdminSettingActivity" android:exported="false" />
+        <activity android:name=".delivery.DeliveryLoginActivity" android:exported="false" />
+        <activity android:name=".delivery.DeliveryOrdersActivity" android:exported="false" />
+        <activity android:name=".delivery.DeliveryOtpActivity" android:exported="false" />
 
     </application>
 

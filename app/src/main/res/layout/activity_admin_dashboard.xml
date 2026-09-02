@@ -109,6 +109,12 @@
                 <ImageView style="@style/ProfileMenuArrow" />
             </LinearLayout>
 
+            <LinearLayout android:id="@+id/menuDeliveryPanel" style="@style/ProfileMenuRow">
+                <ImageView style="@style/ProfileMenuIcon" android:src="@drawable/ic_truck" />
+                <TextView style="@style/ProfileMenuText" android:text="Delivery Panel" />
+                <ImageView style="@style/ProfileMenuArrow" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
